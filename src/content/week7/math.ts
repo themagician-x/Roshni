@@ -1,0 +1,225 @@
+import { type DraftLesson, askEn as ask } from "../helpers";
+
+export const math: DraftLesson[] = [
+  {
+    id: "w7-ma-1",
+    title: "Algebra: letters for numbers",
+    titleUr: "الجبرا: حروف بطور اعداد",
+    minutes: 40,
+    blocks: [
+      {
+        type: "rule",
+        title: "Variables and expressions",
+        points: [
+          "In algebra a letter stands for a number we don't know yet. This letter is a variable (متغیر), like x or n.",
+          "An expression is numbers and letters joined by + − × ÷. Examples: x + 5, 3n, 2a − 7.",
+          "3n means 3 × n. We don't write the × sign. n/4 means n ÷ 4.",
+          "Word to algebra: ‘5 more than x’ = x + 5. ‘7 less than y’ = y − 7. ‘twice a number’ = 2n. ‘half of m’ = m/2.",
+          "Real life: a pen costs Rs p. Three pens cost 3p rupees.",
+        ],
+      },
+      {
+        type: "table",
+        title: "Words to algebra",
+        headers: ["Words", "Algebra"],
+        rows: [
+          ["a number plus 8", "n + 8"],
+          ["10 less than a number", "n − 10"],
+          ["4 times a number", "4n"],
+          ["a number divided by 3", "n/3"],
+          ["2 times a number, plus 1", "2n + 1"],
+          ["Ali's age is x. His father is 25 years older.", "x + 25"],
+        ],
+      },
+      {
+        type: "quiz",
+        lang: "en",
+        title: "Practice",
+        questions: [
+          ask("‘6 more than y’ =", "y + 6", "6y", "y − 6"),
+          ask("‘3 less than k’ =", "k − 3", "3 − k", "3k"),
+          ask("‘five times a number’ =", "5n", "n + 5", "n/5"),
+          ask("A kg of sugar costs Rs s. 4 kg cost…", "4s", "s + 4", "s/4"),
+          ask("Ahmed has x marbles. He gives away 7. Now he has…", "x − 7", "7x", "x + 7"),
+          ask("In 7m, the 7 means…", "7 × m", "7 + m", "7 − m"),
+        ],
+      },
+    ],
+  },
+  {
+    id: "w7-ma-2",
+    title: "Like terms and simplifying",
+    titleUr: "یکساں رقمیں اور سادہ کرنا",
+    minutes: 40,
+    blocks: [
+      {
+        type: "rule",
+        title: "Collect like terms",
+        points: [
+          "Terms with the same letter are like terms: 3x and 5x. 4y and y.",
+          "Add or subtract their numbers: 3x + 5x = 8x. 9y − 2y = 7y. (y means 1y)",
+          "Unlike terms can't be joined: 3x + 2y stays 3x + 2y. And 4a + 5 stays as it is.",
+          "Simplify: 2a + 3b + 4a − b = (2a + 4a) + (3b − b) = 6a + 2b.",
+          "Brackets: 3(x + 2) = 3x + 6. Multiply everything inside.",
+        ],
+      },
+      {
+        type: "quiz",
+        lang: "en",
+        title: "Simplify",
+        questions: [
+          ask("4x + 3x =", "7x", "12x", "7"),
+          ask("10y − 4y =", "6y", "14y", "6"),
+          ask("5a + 2b + 3a =", "8a + 2b", "10ab", "10a"),
+          ask("x + x + x =", "3x", "x³", "3"),
+          ask("2(m + 5) =", "2m + 10", "2m + 5", "m + 10"),
+          ask("7p − p =", "6p", "7", "6"),
+          ask("Which are like terms?", "4k and 9k", "4k and 4m", "4k and 4"),
+        ],
+      },
+    ],
+  },
+  {
+    id: "w7-ma-3",
+    title: "Substitution: putting in values",
+    titleUr: "قیمت رکھنا",
+    minutes: 35,
+    blocks: [
+      {
+        type: "rule",
+        title: "Find the value",
+        points: [
+          "Replace the letter with its number, then use BODMAS.",
+          "If x = 4: 3x + 2 = 3 × 4 + 2 = 14.",
+          "If a = 5 and b = 2: a − b = 3, ab = 10, 2a + 3b = 10 + 6 = 16.",
+          "If n = 3: n² = 9.",
+          "Formulas use substitution too: area of a rectangle = l × w. If l = 8 and w = 5, area = 40.",
+        ],
+      },
+      { type: "drill", title: "Find 4x when x is…", op: "×", a: [2, 15], b: [4, 4], count: 6 },
+      {
+        type: "quiz",
+        lang: "en",
+        title: "Practice",
+        questions: [
+          ask("If x = 5, then 2x + 1 =", "11", "13", "8"),
+          ask("If y = 6, then 20 − y =", "14", "26", "120"),
+          ask("If a = 3 and b = 4, then ab =", "12", "7", "34"),
+          ask("If n = 7, then n² =", "49", "14", "77"),
+          ask("If p = 10, then p/2 + 5 =", "10", "7.5", "15"),
+          ask("Cost = 50n + 100. If n = 4, cost =", "300", "254", "600"),
+        ],
+      },
+    ],
+  },
+  {
+    id: "w7-ma-4",
+    title: "Solving simple equations",
+    titleUr: "سادہ مساوات",
+    minutes: 45,
+    blocks: [
+      {
+        type: "rule",
+        title: "Keep the balance",
+        points: [
+          "An equation has an = sign. Both sides are equal, like a balanced scale. x + 5 = 12.",
+          "To find x, do the same thing to both sides.",
+          "x + 5 = 12 → take 5 from both sides → x = 7.",
+          "x − 4 = 10 → add 4 to both sides → x = 14.",
+          "3x = 18 → divide both sides by 3 → x = 6.",
+          "x/2 = 9 → multiply both sides by 2 → x = 18.",
+          "Check: put your answer back. 7 + 5 = 12 ✓",
+        ],
+      },
+      { type: "drill", title: "Solve 3x = number → divide", op: "÷", a: [2, 15], b: [2, 9], count: 8 },
+      {
+        type: "quiz",
+        lang: "en",
+        title: "Solve",
+        questions: [
+          ask("x + 8 = 15, x =", "7", "23", "8"),
+          ask("y − 6 = 4, y =", "10", "2", "−2"),
+          ask("5n = 35, n =", "7", "30", "40"),
+          ask("m/4 = 3, m =", "12", "7", "3/4"),
+          ask("a + 12 = 30, a =", "18", "42", "12"),
+          ask("9k = 81, k =", "9", "72", "90"),
+        ],
+      },
+    ],
+  },
+  {
+    id: "w7-ma-5",
+    title: "Two-step equations",
+    titleUr: "دو قدم والی مساوات",
+    minutes: 45,
+    blocks: [
+      {
+        type: "rule",
+        title: "Undo in reverse order",
+        points: [
+          "2x + 3 = 11. First undo + 3: 2x = 8. Then undo × 2: x = 4.",
+          "Rule: first remove the number added or subtracted, then divide or multiply.",
+          "5x − 7 = 18 → 5x = 25 → x = 5.",
+          "x/3 + 2 = 6 → x/3 = 4 → x = 12.",
+          "Check: 2 × 4 + 3 = 11 ✓",
+        ],
+      },
+      {
+        type: "table",
+        title: "Step by step: 4x + 6 = 30",
+        headers: ["Step", "Do", "Result"],
+        rows: [
+          ["1", "subtract 6 from both sides", "4x = 24"],
+          ["2", "divide both sides by 4", "x = 6"],
+          ["Check", "4 × 6 + 6", "30 ✓"],
+        ],
+      },
+      {
+        type: "quiz",
+        lang: "en",
+        title: "Solve",
+        questions: [
+          ask("2x + 5 = 13, x =", "4", "9", "8"),
+          ask("3y − 4 = 11, y =", "5", "7/3", "15"),
+          ask("4n + 1 = 21, n =", "5", "4", "22/4"),
+          ask("6a − 6 = 30, a =", "6", "4", "36"),
+          ask("x/2 + 3 = 8, x =", "10", "5", "22"),
+          ask("10 + 2k = 24, k =", "7", "14", "17"),
+        ],
+      },
+    ],
+  },
+  {
+    id: "w7-ma-6",
+    title: "Word problems with equations",
+    titleUr: "سوالات بذریعہ مساوات",
+    minutes: 45,
+    blocks: [
+      {
+        type: "rule",
+        title: "From story to equation",
+        points: [
+          "1. Choose a letter for the unknown: let the price of one pen be x.",
+          "2. Write the equation from the story: 4 pens and a Rs 50 notebook cost Rs 210 → 4x + 50 = 210.",
+          "3. Solve: 4x = 160, x = 40.",
+          "4. Answer in words with units: one pen costs Rs 40.",
+          "5. Check with the story: 4 × 40 + 50 = 210 ✓",
+        ],
+      },
+      {
+        type: "quiz",
+        lang: "en",
+        title: "Word problems",
+        questions: [
+          ask("A number plus 15 is 40. The number is…", "25", "55", "15"),
+          ask("Three times a number is 51. The number is…", "17", "48", "153"),
+          ask("Ali is x years old. His father is 3 times his age and is 57. Ali is…", "19", "54", "171"),
+          ask("5 kg of rice and a Rs 100 bag cost Rs 1,600. 1 kg of rice costs…", "Rs 300", "Rs 320", "Rs 340"),
+          ask("A rectangle's length is 2x, width x, perimeter 36 cm. x =", "6", "12", "9"),
+          ask("I think of a number, double it and add 7. I get 29. The number is…", "11", "18", "36"),
+        ],
+      },
+      { type: "write", lang: "en", items: ["Let x = …", "Equation: …", "Solve: …", "Answer: …", "Check: …"], note: "Make 3 word problems from your own life (prices, ages, money) and solve them with these 5 steps." },
+    ],
+  },
+];

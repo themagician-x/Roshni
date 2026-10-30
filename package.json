@@ -1,26 +1,65 @@
 {
-  "name": "tayyab-education",
-  "version": "0.1.0",
+  "name": "roshni",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "next": "16.4.3",
-    "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "dev": "vite --port 4000",
+    "app": "concurrently -k \"vite --port 4000 --strictPort\" \"wait-on tcp:4000 && env -u ELECTRON_RUN_AS_NODE ROSHNI_DEV=1 electron .\"",
+    "build": "tsc --noEmit && vite build",
+    "speech": "tsx scripts/collect-speech.ts",
+    "dist": "npm run build && electron-builder --win nsis --x64",
+    "emoji": "tsx scripts/copy-emoji.ts"
   },
   "devDependencies": {
-    "@tailwindcss/turbopack": "^4",
+    "@fontsource-variable/lexend": "^5.3.0",
+    "@fontsource/noto-nastaliq-urdu": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@twemoji/svg": "^15.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.4.3",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "@vitejs/plugin-react": "^5.2.0",
+    "concurrently": "^9.2.5",
+    "electron": "^45.1.0",
+    "electron-builder": "^26.18.0",
+    "lucide-react": "^1.64.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vite": "^7.3.7",
+    "wait-on": "^9.5.1"
+  },
+  "description": "Roshni — Urdu, English and Math from the alphabet to Matric, offline",
+  "author": "Roshni",
+  "main": "electron/main.cjs",
+  "build": {
+    "appId": "pk.roshni.app",
+    "productName": "Roshni",
+    "files": [
+      "dist/**",
+      "electron/**",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Roshni"
+    },
+    "toolsets": {
+      "nsis": "1.2.1"
+    }
   }
 }

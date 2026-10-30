@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+:root {
+  /* Roshni Gold */
+  --bg: #fffaf2;
+  --card: #ffffff;
+  --paper: #f7efe2;
+  --ink: #2b2118;
+  --muted: #7a6a58;
+  --line: #eadcc6;
+  --accent: #d97706;
+  --accent-soft: #fdf0d5;
+  --good: #15803d;
+  --good-soft: #dcfce7;
+  --bad: #c0352b;
+  --bad-soft: #fde4e1;
+  --warn: #b45309;
+  --warn-soft: #fdecc8;
+}
+
+[data-subject="urdu"] {
+  --accent: #047857;
+  --accent-soft: #d8f3e8;
+}
+[data-subject="english"] {
+  --accent: #2563eb;
+  --accent-soft: #e0eaff;
+}
+[data-subject="math"] {
+  --accent: #e1533d;
+  --accent-soft: #fde4de;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-good: var(--good);
+  --color-good-soft: var(--good-soft);
+  --color-bad: var(--bad);
+  --color-bad-soft: var(--bad-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  /* Lexend: designed to make reading easier for learners. */
+  --font-sans: "Lexend Variable", system-ui, sans-serif;
+}
+
+/* Native checkboxes follow the app's colours. */
+:root {
+  color-scheme: light;
+  accent-color: #d97706;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Thin, themed scrollbars everywhere (Windows otherwise draws wide grey ones). */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--muted);
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Hand cursor on everything clickable. */
+@layer base {
+  button:not(:disabled),
+  [role="button"],
+  a[href],
+  label:has(input[type="checkbox"]),
+  input[type="checkbox"],
+  select {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
+/* Nastaliq needs tall lines or the letters collide. Layered so leading-* utilities can override. */
+@layer components {
+  .ur {
+    font-family: "Noto Nastaliq Urdu", serif;
+    line-height: 2.1;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+}
