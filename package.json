@@ -32,7 +32,7 @@
     "wait-on": "^9.5.1"
   },
   "description": "Roshni — Urdu, English and Math from the alphabet to Matric, offline",
-  "author": "Roshni",
+  "author": "Aqeel Ahmed",
   "main": "electron/main.cjs",
   "build": {
     "appId": "pk.roshni.app",
@@ -43,20 +43,24 @@
       "package.json"
     ],
     "directories": {
-      "output": "release"
+      "output": "release",
+      "buildResources": "build"
     },
     "win": {
       "target": [
         "nsis"
       ],
-      "signAndEditExecutable": false
+      "signExecutable": false,
+      "icon": "build/icon.ico"
     },
     "nsis": {
       "oneClick": false,
       "perMachine": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
-      "shortcutName": "Roshni"
+      "shortcutName": "Roshni",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico"
     },
     "toolsets": {
       "nsis": "1.2.1"
